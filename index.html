@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f3ee" />
+    <meta name="description" content="Plan your Doha Airport layover, compare Priority Pass lounges, and keep your next gate in view." />
+    <title>Layover — Doha Airport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Layover home">
+        <span class="wordmark-mark">L<span>.</span></span>
+        <span class="wordmark-name">layover</span>
+      </a>
+      <div class="airport-label"><span class="live-dot"></span> DOHA · HAMAD INTERNATIONAL <span class="airport-code">DOH</span></div>
+      <button class="text-button edit-trigger" type="button" aria-label="Edit your flights"><span aria-hidden="true">✎</span><span>Edit trip</span></button>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="intro-row" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">YOUR CONNECTION, MADE EASIER <span class="demo-tag">FLIGHTSTATS ESTIMATES</span></p>
+          <h1 id="page-title">Make the most of<br class="mobile-break" /> your layover.</h1>
+        </div>
+        <div class="local-clock"><span class="clock-label">DOHA LOCAL TIME</span><strong id="local-time">--:--</strong><span class="clock-zone">AST · UTC+3</span></div>
+      </section>
+
+      <section class="journey-strip" aria-label="Your flight connection">
+        <article class="flight-leg arrival-leg">
+          <div class="leg-heading"><span class="leg-icon" aria-hidden="true">↘</span> ARRIVING</div>
+          <div class="flight-main"><span class="flight-code" id="arrival-flight">QR 740</span><span class="status-pill delayed"><span aria-hidden="true"></span><span id="arrival-status" class="status-copy">DELAYED</span></span></div>
+          <div class="flight-details"><span id="arrival-date-label">Wed, 14 Oct</span><span class="detail-divider">·</span><span>ETA <strong id="arrival-time">19:54</strong></span><span class="clock-zone">DOH</span></div>
+          <div class="flight-facts inbound-details"><span>FROM<strong id="arrival-from">Los Angeles (LAX)</strong></span><span>SCHEDULED<strong id="arrival-scheduled-time">18:30</strong></span><span>DELAY<strong id="arrival-delay">1h 24m</strong></span><span>FLIGHT TIME<strong>16h 04m</strong></span></div>
+          <div class="gate-line"><span>ARRIVAL GATE</span><strong id="arrival-gate">TBD</strong></div>
+          <div class="departure-refresh-row"><span id="arrival-update-status">FlightStats · checked 13 Oct 2026</span><a id="arrival-refresh" class="refresh-link" href="https://www.flightstats.com/v2/flight-details/QR/740" target="_blank" rel="noopener noreferrer" aria-label="View QR 740 on FlightStats">View FlightStats <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <div class="connection-bridge">
+          <div class="bridge-line"><span class="plane-mark" aria-hidden="true">✈</span></div>
+          <div class="layover-duration"><span>TIME BETWEEN FLIGHTS</span><strong id="duration-label">11h 06m</strong></div>
+        </div>
+        <article class="flight-leg departure-leg">
+          <div class="leg-heading"><span class="leg-icon" aria-hidden="true">↗</span> DEPARTING</div>
+          <div class="flight-main"><span class="flight-code" id="departure-flight">QR 650</span><span class="status-pill scheduled"><span aria-hidden="true"></span><span id="departure-status" class="status-copy">SCHEDULED</span></span></div>
+          <div class="flight-details"><span id="departure-date-label">Thu, 15 Oct</span><span class="detail-divider">·</span><span id="departure-time">07:00</span><span class="clock-zone">DOH · SCHED.</span></div>
+          <div class="flight-facts outbound-details"><span>TO <strong id="departure-to">Kathmandu (KTM)</strong></span><span>EST. ARRIVAL <strong><span id="departure-arrival-time">14:15</span> · <span id="departure-arrival-date-label">Thu, 15 Oct</span></strong></span><span>FLIGHT TIME <strong id="departure-duration">4h 30m</strong></span><span>ARRIVAL TERMINAL <strong id="departure-terminal">I</strong></span></div>
+          <div class="gate-line"><span>DEPARTURE GATE</span><strong id="departure-gate">TBD</strong></div>
+          <div class="departure-refresh-row"><span id="departure-update-status">FlightStats · checked 13 Oct 2026</span><a id="departure-refresh" class="refresh-link" href="https://www.flightstats.com/v2/flight-details/QR/650" target="_blank" rel="noopener noreferrer" aria-label="View QR 650 on FlightStats">View FlightStats <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </section>
+
+      <section class="planner-grid" aria-label="Layover planner">
+        <div class="main-column">
+          <section class="time-panel" aria-labelledby="time-title">
+            <div class="panel-heading">
+              <div><p class="eyebrow">YOUR TIME, AT A GLANCE</p><h2 id="time-title">A little room to breathe.</h2></div>
+              <span class="time-icon" aria-hidden="true">◷</span>
+            </div>
+            <div class="time-summary">
+              <div class="time-remaining"><span>TIME UNTIL DEPARTURE</span><strong id="countdown">--h --m</strong><small>Keep an eye on your gate. Boarding times can change.</small></div>
+              <div class="time-split"><div><span>LOUNGE TIME</span><strong id="lounge-time">3h 40m</strong></div><div><span>GATE BUFFER</span><strong>45 min</strong></div></div>
+            </div>
+            <p class="connection-warning" id="connection-warning" role="alert" hidden><strong>Schedule conflict.</strong> FlightStats lists QR650 departing <span id="warning-departure">07:00 Wed 14 Oct</span>, before QR740 arrives at <span id="warning-arrival">19:54 Wed 14 Oct</span>. Confirm the departure date before planning this connection. <a href="https://www.flightstats.com/v2/flight-details/QR/650" target="_blank" rel="noopener noreferrer">Check FlightStats ↗</a></p>
+            <div class="journey-timeline" aria-label="Suggested layover timeline">
+              <div class="timeline-track"><span class="timeline-fill"></span><span class="timeline-marker marker-arrival"></span><span class="timeline-marker marker-lounge"></span><span class="timeline-marker marker-leave"></span><span class="timeline-marker marker-departure"></span></div>
+              <div class="timeline-labels"><span><strong>19:54</strong>Arrive</span><span><strong>20:19</strong>Walk to lounge</span><span><strong>06:15</strong>Head to gate</span><span><strong>07:00</strong>Depart</span></div>
+            </div>
+            <p class="timeline-note"><span aria-hidden="true">i</span> Times are a suggested plan. Confirm your boarding time and gate with the airport.</p>
+          </section>
+
+          <a class="doh-map-link" href="https://dohahamadairport.com/airport-guide/at-the-airport/maps" target="_blank" rel="noopener noreferrer">
+            <span class="doh-map-icon" aria-hidden="true">⌖</span>
+            <span class="doh-map-title">DOH airport map</span>
+            <span class="doh-map-detail">Official terminal map</span>
+            <span class="doh-map-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <section class="lounges-section" aria-labelledby="lounges-title">
+            <div class="section-heading">
+              <div><p class="eyebrow">PRIORITY PASS AT DOH <span class="result-count">9 OPTIONS</span></p><h2 id="lounges-title">Pick your place to pause.</h2></div>
+              <label class="search-box"><span aria-hidden="true">⌕</span><input id="lounge-search" type="search" placeholder="Find a lounge" aria-label="Find a lounge" /></label>
+            </div>
+            <div class="category-tabs" role="group" aria-label="Filter Priority Pass options">
+              <button type="button" class="category-tab active" data-category-filter="all" aria-pressed="true">All <span>9</span></button>
+              <button type="button" class="category-tab" data-category-filter="lounges" aria-pressed="false">Lounges <span>3</span></button>
+              <button type="button" class="category-tab" data-category-filter="rest" aria-pressed="false">Rest <span>3</span></button>
+              <button type="button" class="category-tab" data-category-filter="refresh" aria-pressed="false">Refresh <span>3</span></button>
+            </div>
+            <div class="lounge-list" id="lounge-list" aria-live="polite">
+              <p class="no-results" id="no-results" hidden>No lounges match that search.</p>
+            </div>
+            <p class="availability-note"><span aria-hidden="true">*</span> Names, hours, ratings, and locations are from Priority Pass; access can vary by membership. <a href="https://www.prioritypass.com/en-GB/lounges/qatar/hamad-international" target="_blank" rel="noopener noreferrer">Verify current access and details ↗</a></p>
+          </section>
+        </div>
+
+      </section>
+      <footer class="page-footer"><span>LAYOVER <span class="footer-dot">·</span> DOH</span><span>Plan ahead. Wander well.</span></footer>
+    </main>
+
+    <dialog class="edit-dialog" id="edit-dialog" aria-labelledby="edit-title">
+      <form method="dialog" id="trip-form">
+        <div class="dialog-heading"><div><p class="eyebrow">YOUR CONNECTION</p><h2 id="edit-title">Edit your trip</h2></div><button class="close-button" value="cancel" aria-label="Close">×</button></div>
+        <div class="form-grid">
+          <label>Arrival flight<input name="arrivalFlight" value="QR 740" required /></label>
+          <label>Arrival date<input name="arrivalDate" type="date" value="2026-10-14" required /></label>
+          <label>Arrival origin<input name="arrivalFrom" value="Los Angeles (LAX)" required /></label>
+          <label>Arrival status<input name="arrivalStatus" value="DELAYED" required /></label>
+          <label>Scheduled arrival time<input name="arrivalScheduledTime" type="time" value="18:30" required /></label>
+          <label>Estimated delay<input name="arrivalDelay" value="1h 24m" required /></label>
+          <label>Estimated arrival time (Doha)<input name="arrivalTime" type="time" value="19:54" required /></label>
+          <label>Arrival gate<input name="arrivalGate" value="TBD" required /></label>
+          <label>Departure flight<input name="departureFlight" value="QR 650" required /></label>
+          <label>Departure date<input name="departureDate" type="date" value="2026-10-15" required /></label>
+          <label>Departure time (Doha)<input name="departureTime" type="time" value="07:00" required /></label>
+          <label>Flight status<input name="departureStatus" value="SCHEDULED" required /></label>
+          <label>Departure gate<input name="departureGate" value="TBD" required /></label>
+          <label>Destination<input name="departureTo" value="Kathmandu (KTM)" required /></label>
+          <label>Estimated arrival date<input name="departureArrivalDate" type="date" value="2026-10-15" required /></label>
+          <label>Estimated arrival time<input name="departureArrivalTime" type="time" value="14:15" required /></label>
+          <label>Flight duration<input name="departureDuration" value="4h 30m" required /></label>
+          <label>Arrival terminal<input name="departureTerminal" value="I" required /></label>
+        </div>
+        <p class="dialog-note">FlightStats opens in a separate tab and does not sync data back here. Check the flight date, then update these fields manually.</p>
+        <div class="dialog-actions"><button class="cancel-button" value="cancel">Cancel</button><button class="save-button" id="save-trip" value="default">Save trip <span aria-hidden="true">→</span></button></div>
+      </form>
+    </dialog>
+  </body>
+</html>
